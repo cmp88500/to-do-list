@@ -37,19 +37,34 @@ $(document).ready(function() {
     var nextTask = new Task(inputtedName, inputtedDescription, inputtedComplete);
 
     $("#task-list").show();
-    $("ul#task-list").append("<li><span class='task-item'>" + nextTask.shortName + "</span></li>");
+    $("ul#task-list").append("<li><span class='task-item' id=" + nextTask.shortName + ">" + nextTask.shortName + "</span></li>");
+
+    $("#sweep").addClass("finished");
+
+
 
     $(".task-item").last().click(function() {
       $(".task-details").text("");
       $(".task-details").append("<h4>" + nextTask.shortName + "</h4>");
       $(".task-details").append("<ul>");
       $(".task-details").append("<li>" + "Description: " + nextTask.description + "</li>");
-      $(".task-details").append("<li>Click here if this task is finished.</li>") // The idea here is, we have a jQuery click listener here that executes a function when this text is clicked that will change the value of nextTask.complete from True to False. At the same time, when the complete value changes from True to False, the instances of nextTask.shortName here in the task-details panel and the instance in the task-list under the To-Do List header on the left will have the class "finished" added to their span, which will style the text with a striketru effect.
+      $(".task-details").append("<li><span class='finish-clicker'>Click here if this task is finished.</span></li>")
+      $(".task-details").append("")
+      $(".task-details").append("<label><input class='taskToggle' type='radio' value='yes'>Yes</label>")
+      $(".task-details").append("<label><input class='taskToggle' type='radio' value='no'>No</label>")
+
+
+     // The idea here is, we have a jQuery click listener here that executes a function when this text is clicked that will change the value of nextTask.complete from True to False. At the same time, when the complete value changes from True to False, the instances of nextTask.shortName here in the task-details panel and the instance in the task-list under the To-Do List header on the left will have the class "finished" added to their span, which will style the text with a striketru effect.
 
       // ("#show-contact").last().click(function() {
       //
       // })
     });
+/*
+    $(".finish-clicker").last().click(function() {
+      $(""Here, we want to refer to the id added to the To-Do list items on line 40 with id=nextTask.shortName)).addClass("finished");
+    });
+*/
 
     $("#task-name").val("");
     $("#task-description").val("");

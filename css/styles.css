@@ -1,3 +1,7 @@
 #task-list {
   display: none;
 }
+
+.finished {
+  text-decoration: line-through;
+}
