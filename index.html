@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>To-Do List</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.js"></script>
+    <script src="js/scripts.js"></script>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="jumbotron">
+        <h2>To-Do List</h2>
+        <p>Keep track of your daily task with this handy task tracker.</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-6" id="input-col">
+          <h3>Input</h3>
+
+          <form id="task-form">
+
+            <div class="form-group">
+              <label for="task-name">Enter a short name for the task: </label>
+              <input class="form-control" id="task-name" type="text">
+            </div>
+
+            <div class="form-group">
+              <label for="task-description">Enter a description for the task: </label>
+              <input class="form-control" id="task-description" type="text">
+            </div>
+
+            <div class="form-group">
+              <label for="task-complete">Have you completed this task yet? </label>
+              <input class="form-control" id="task-complete" type="checkbox" name="task-complete" value="true">
+            </div>
+
+            <button type="submit">Submit</button>
+
+          </form>
+
+          <h3>To-Do List</h3>
+            <ul id="task-list">
+            </ul>
+        </div>
+
+        <div class="col-md-6" id="output-col">
+          <h3>Task Details</h3>
+          <div class="task-details">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>
